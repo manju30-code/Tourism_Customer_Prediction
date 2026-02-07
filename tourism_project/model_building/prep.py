@@ -62,12 +62,12 @@ Xtest_processed = preprocessor.transform(Xtest)
 feature_names = preprocessor.get_feature_names_out()
 
 Xtrain_df = pd.DataFrame(
-    Xtrain_processed.toarray(),
+    Xtrain_processed,
     columns=feature_names
 )
 
 Xtest_df = pd.DataFrame(
-    Xtest_processed.toarray(),
+    Xtest_processed,
     columns=feature_names
 )
 
