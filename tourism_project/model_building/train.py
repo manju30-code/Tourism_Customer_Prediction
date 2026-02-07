@@ -39,7 +39,7 @@ ytest = pd.read_csv(ytest_path)
 
 numeric_features = ['Age','MonthlyIncome']
 categorical_features = ['Designation', 'OwnCar', 'Passport',
-            'CityTier','MaritalStatus',
+            'CityTier','MaritalStatus','ProductPitched',
             'Gender','Occupation','TypeofContact'
             ]
 
