@@ -60,9 +60,9 @@ st.dataframe(input_data)
 if st.button("Predict"):
     try:
         # Apply same preprocessing as training
-        X_processed = preprocessor.transform(input_data)
+        # X_processed = preprocessor.transform(input_data)
 
-        prediction = model.predict(X_processed)[0]
+        prediction = model.predict(input_data)[0]
         prediction_proba = model.predict_proba(X_processed)[0][1]
 
         if prediction == 1:
