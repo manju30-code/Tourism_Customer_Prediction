@@ -59,11 +59,10 @@ st.dataframe(input_data)
 # Prediction 	
 if st.button("Predict"):
     try:
-        # Apply same preprocessing as training
-        # X_processed = preprocessor.transform(input_data)
+        
 
         prediction = model.predict(input_data)[0]
-        prediction_proba = model.predict_proba(X_processed)[0][1]
+        prediction_proba = model.predict_proba(input_data)[0][1]
 
         if prediction == 1:
             st.success(f"✅ Customer is likely to take the product (Confidence: {prediction_proba:.2f})")
