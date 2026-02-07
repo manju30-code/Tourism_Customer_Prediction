@@ -121,6 +121,10 @@ with mlflow.start_run():
     model_path = "best_tourism_prediction_model_v1.joblib"
     joblib.dump(best_model, model_path)
 
+	# Save the preprocessor
+    preprocessor_path = "preprocessor.joblib"
+    joblib.dump(preprocessor, preprocessor_path)
+	
     # Log the model artifact
     mlflow.log_artifact(model_path, artifact_path="model")
     print(f"Model saved as artifact at: {model_path}")
@@ -142,6 +146,13 @@ with mlflow.start_run():
     api.upload_file(
         path_or_fileobj="best_tourism_prediction_model_v1.joblib",
         path_in_repo="best_tourism_prediction_model_v1.joblib",
+        repo_id=repo_id,
+        repo_type=repo_type,
+    )
+
+	api.upload_file(
+        path_or_fileobj="preprocessor.joblib",
+        path_in_repo="preprocessor.joblib",
         repo_id=repo_id,
         repo_type=repo_type,
     )
