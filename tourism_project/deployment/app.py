@@ -7,6 +7,10 @@ import joblib
 model_path = hf_hub_download(repo_id="mkrish2025/Tourism-Customer-Prediction", filename="best_tourism_prediction_model_v1.joblib")
 model = joblib.load(model_path)
 
+# Download preprocessor model
+preprocessor_path = hf_hub_download(repo_id="mkrish2025/Tourism-Customer-Prediction", filename="preprocessor.joblib")
+preprocessor = joblib.load(preprocessor_path)
+
 # Streamlit UI for Machine Failure Prediction
 st.title("Customer Tour Package Prediction App")
 st.write("""
